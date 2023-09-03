@@ -1,3 +1,6 @@
+#ifndef _BASE_GATES_H_
+#define _BASE_GATES_H_
+
 #include <vector>
 
 namespace Gates {
@@ -46,3 +49,5 @@ namespace Gates {
             }
     };
 }
+
+#endif

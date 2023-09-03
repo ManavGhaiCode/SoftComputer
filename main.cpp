@@ -4,14 +4,14 @@
 #include "Gates.h"
 
 int main() {
-    Gates::nandGate nand;
+    Gates::orGate or0;
 
-    nand.input[0] = 0;
-    nand.input[1] = 1;
+    or0.input[0] = 0;
+    or0.input[1] = 1;
 
-    nand.run();
+    or0.run();
 
-    std::cout << nand.output << std::endl;
+    std::cout << or0.output << std::endl;
 
     return 0;
 }

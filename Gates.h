@@ -44,6 +44,31 @@ namespace Gates {
                 output = nand0.output;
             }
     };
+
+    class XORGate : public Gates::Gate {
+        private:
+            orGate or0;
+            andGate and0;
+            nandGate nand0; 
+
+        public:
+            void run() override {
+                or0.input[0] = input[0];
+                or0.input[1] = input[1];
+                nand0.input[0] = input[0];
+                nand0.input[1] = input[1];
+
+                or0.run();
+                nand0.run();
+
+                and0.input[0] = or0.output;
+                and0.input[1] = nand0.output;
+
+                and0.run();
+
+                output = and0.output;
+            }
+    };
 }
 
 #endif

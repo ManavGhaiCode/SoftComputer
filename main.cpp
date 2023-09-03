@@ -4,14 +4,14 @@
 #include "Gates.h"
 
 int main() {
-    Gates::orGate or0;
+    Gates::XORGate xor0;
 
-    or0.input[0] = 0;
-    or0.input[1] = 1;
+    xor0.input[0] = 0;
+    xor0.input[1] = 0;
 
-    or0.run();
+    xor0.run();
 
-    std::cout << or0.output << std::endl;
+    std::cout << xor0.output << std::endl;
 
     return 0;
 }

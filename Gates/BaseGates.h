@@ -27,10 +27,10 @@ namespace Gates {
             virtual void run() = 0;
     };
 
-    class CustomGate {
+    template<int IF, int OF> class CustomGate {
         public:
-            std::vector<bool> input;
-            std::vector<bool> output;
+            bool input[IF];
+            bool output[OF];
 
             virtual void run() = 0; 
     };

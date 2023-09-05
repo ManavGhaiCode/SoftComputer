@@ -4,19 +4,19 @@
 #include "./Chips/Ram.h"
 
 int main() {
-    Chips::SRLatch srlatch;
+    Chips::DLatch dlatch;
 
-    srlatch.input[0] = 1;
-    srlatch.input[1] = 0;
-    srlatch.run();
+    dlatch.input[0] = 1;
+    dlatch.input[1] = 1;
+    dlatch.run();
 
-    std::cout << srlatch.output << std::endl;
+    std::cout << dlatch.output << std::endl;
 
-    srlatch.input[0] = 1;
-    srlatch.input[1] = 1;
-    srlatch.run();
+    dlatch.input[0] = 0;
+    dlatch.input[1] = 1;
+    dlatch.run();
 
-    std::cout << srlatch.output << std::endl;
+    std::cout << dlatch.output << std::endl;
 
     return 0;
 }

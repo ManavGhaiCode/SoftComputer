@@ -28,4 +28,36 @@ namespace Chips {
                 output = and0.output;
             }
     };
+
+    class DLatch : public Gates::Gate {
+        private:
+            Gates::andGate and0;
+            Gates::andGate and1;
+            Gates::notGate not0;
+
+
+            SRLatch srl0;
+
+        public:
+            void run() override {
+                not0.input = input[0];
+                not0.run();
+
+                and0.input[0] = input[0];
+                and0.input[1] = input[1];
+
+                and1.input[0] = not0.output;
+                and1.input[1] = input[1];
+
+                and0.run();
+                and1.run();
+
+                srl0.input[0] = and0.output;
+                srl0.input[1] = and1.output;
+                srl0.run();
+
+                output = srl0.output;
+            }
+
+    };
 }

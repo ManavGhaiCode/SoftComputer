@@ -2,13 +2,13 @@
 #include "../Gates/Gates.h"
 
 namespace Chips {
-    class SRLatch : Gates::Gate {
+    class SRLatch : public Gates::Gate {
         private:
             Gates::orGate or0;
             Gates::notGate not0;
             Gates::andGate and0;
 
-        private:
+        public:
             void run() override {
                 or0.output = 0;
                 and0.output = 0;
